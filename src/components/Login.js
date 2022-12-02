@@ -4,18 +4,27 @@ import {createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPa
 
 import{auth} from '../firebaseConfig';
 
+import {useNavigate} from 'react-router';
+
 const Login = () =>{
     //declaracion de variables
     const [registerEmail, setRegisterEmail] = useState('');
     const [registerPassword, setRegisterPassword] = useState('');
     const [loginEmail, setLoginEmail] = useState('');
+    const [saveLogin, setSaveLoginEmail] = useState('');
     const [loginPassword, setLoginPassword] = useState('');
 
-    const [user, setUser]= useState({})
+    const [usuario, setUsuario]= useState({})
+    const navigate = useNavigate();
 
-    onAuthStateChanged(auth, (currentUser)=>{
-        setUser(currentUser)
-    })
+    const divRegistro = document.getElementById('register');
+    console.log('auth ni bien ingresa', auth)
+if (auth.currentUser != null) {
+  onAuthStateChanged(auth, (currentUser)=>{
+    setUsuario(currentUser)
+})
+}
+     
 
 
     //funciones
@@ -32,6 +41,10 @@ const Login = () =>{
         try{
             const user = await signInWithEmailAndPassword(auth,loginEmail, loginPassword);
             console.log(user)
+            console.log('auth cuando inicia sesion', auth)
+            setSaveLoginEmail(loginEmail)
+            navigate('/');
+           // divRegistro.style.display='none';
         }
       catch(error) {
         console.log(error.message)
@@ -40,28 +53,31 @@ const Login = () =>{
 
     const cierreSesion = async ()  =>{
       await signOut(auth);
+      console.log('se deslogueo', auth)
+      setSaveLoginEmail('');
     } 
-    //
+    
     return (
         <div className='login'>
             <div className='divRegistro'>
                 <h3>Registro de usuario</h3>
-                <input placeholder='ingrese sue email' autoComplete='off' onChange={(event)=> {setRegisterEmail(event.target.value)}}/>
-                <input placeholder='ingrese sue coontraseña' autoComplete='off'  onChange={(event)=> {setRegisterPassword(event.target.value)}}/>
-
+                <div id='register'>
+                <input  placeholder='ingrese sue email'  onChange={(event)=> {setRegisterEmail(event.target.value)}}/>
+                <input placeholder='ingrese sue coontraseña'  onChange={(event)=> {setRegisterPassword(event.target.value)}}/>
+               
                 <button onClick={registro}>Crear usuario</button>
+                </div>
             </div>
 
             <div className='divLogin'>
                 <h3>Inicia sesion</h3>
-                <input placeholder='ingrese sue email' autoComplete='off' onChange={(event)=> {setLoginEmail(event.target.value)}}/>
-                <input placeholder='ingrese sue coontraseña' autoComplete='off' onChange={(event)=> {setLoginPassword(event.target.value)}}/>
+                <input placeholder='ingrese sue email'  onChange={(event)=> {setLoginEmail(event.target.value)}}/>
+                <input placeholder='ingrese sue coontraseña'  onChange={(event)=> {setLoginPassword(event.target.value)}}/>
 
                 <button onClick={inicioSesion}>iniciar sesion</button>
             </div>
-            <h4>Usuario actual</h4>
-            {user?.email}
-
+            <h4 >Usuario actual {saveLogin}</h4>
+           
             <button onClick={cierreSesion}>Cerrar sesion</button>
         </div>
     )
