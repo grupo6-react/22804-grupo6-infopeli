@@ -3,8 +3,9 @@
   justify-content: center;
   text-align: center;
   background-image: url(../../assets/bannerSL.png);
-  width: 100%;
-  height: auto;
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
 }
 .logo-emovies{
   width: auto;
@@ -16,6 +17,7 @@
   text-align: center;
   justify-content: center;
   margin-top: 20px;
+
 }
 .footer-col{
   display: flex;
@@ -29,7 +31,6 @@
   text-decoration: none;
   color: #fff;
   margin-bottom: 10px;
-  font-weight: bold;
   list-style: none;
   cursor: pointer;
 }
