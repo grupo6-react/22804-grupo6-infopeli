@@ -3,9 +3,13 @@
   justify-content: center;
   text-align: center;
   background-image: url(../../assets/bannerSL.png);
+  background-size: contain;
+  background-repeat:repeat-x;
   width: 100vw;
   position: absolute;
   bottom: 0;
+
+    
 }
 .logo-emovies{
   width: auto;
@@ -38,4 +42,3 @@
 .link-footer:hover{
   color: #ffe066;
 }
- 
