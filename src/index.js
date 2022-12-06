@@ -2,14 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import Router from './router/Router';
+import { TmdbApiContextProvider } from './contexts/TmdbApiContext';
 
-import './firebaseConfig'
+import './firebaseConfig';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Router />
+    <TmdbApiContextProvider>
+      <Router />
+    </TmdbApiContextProvider>
   </React.StrictMode>
 );
-
-
