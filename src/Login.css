@@ -1,0 +1,32 @@
+
+.titulo{
+    text-align: center;
+    padding: 1rem;
+}
+.divRegistro, .divLogin{
+    text-align: center;
+}
+.registro, .login {
+    display: flex;
+    flex-direction: column;
+}
+input {
+    width: 25% !important;
+}
+
+
+ 
+@media only screen and (max-width: 480px)  {
+    input{
+        width: 70% !important;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width:780px) {
+    input{
+        width: 50% !important;
+    }
+}
+
+@media only screen and (min-width: 1201px) {
+}

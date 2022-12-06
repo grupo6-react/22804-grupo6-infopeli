@@ -1,12 +1,14 @@
 
 import React, {useState, useContext} from 'react';
 import {createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut} from 'firebase/auth'
+import '../Login.css';
 
 import{auth} from '../firebaseConfig';
 
 import {useNavigate} from 'react-router';
 
 import {useLoginContext} from '../UserProvider';
+import Swal from 'sweetalert2';
 
 
 
@@ -25,8 +27,8 @@ const Login = () =>{
     const registro = async () =>{
         try{
             const user = await createUserWithEmailAndPassword(auth,registerEmail, registerPassword);
-            setRegisterEmail('');
-            setLoginPassword('');
+            Swal.fire('Usuario Registrado con exito');
+           
         }
       catch(error) {
         if ((registerEmail === '' || registerPassword=== '')) {
@@ -62,24 +64,25 @@ const Login = () =>{
     return (
         <div className='login'>
             <div className='divRegistro'>
-                <h3>Registro de usuario</h3>
-                <div id='register'>
-                <input  placeholder='ingrese su email'  onChange={(event)=> {setRegisterEmail(event.target.value)}}/>
-                <input placeholder='ingrese su coontraseña'  onChange={(event)=> {setRegisterPassword(event.target.value)}}/>
-                <button onClick={registro}>Crear usuario</button>
-                
+                <h3 className='titulo'>Registro de usuario </h3>
+                <div className='registro'>
+                <input className="form-control  m-auto mb-3"   placeholder='ingrese su email'  onChange={(event)=> {setRegisterEmail(event.target.value)}}/>
+                <input className="form-control m-auto mb-3" placeholder='ingrese su coontraseña'  onChange={(event)=> {setRegisterPassword(event.target.value)}}/>
+                <button className="mx-auto" onClick={registro}>Crear usuario</button>
                 </div>
             </div>
 
             <div className='divLogin'>
-                <h3>Inicia sesion</h3>
-                <input placeholder='ingrese su email'  onChange={(event)=> {setLoginEmail(event.target.value)}}/>
-                <input placeholder='ingrese su coontraseña'  onChange={(event)=> {setLoginPassword(event.target.value)}}/>
-                <button onClick={inicioSesion}>iniciar sesion</button>
+                <h3 className='titulo'>Inicio  de sesion</h3>
+                <div className='login'>
+                <input className="form-control  m-auto mb-3"  placeholder='ingrese su email'  onChange={(event)=> {setLoginEmail(event.target.value)}}/>
+                <input className="form-control  m-auto mb-3" placeholder='ingrese su coontraseña'  onChange={(event)=> {setLoginPassword(event.target.value)}}/>
+                <button className="mx-auto" onClick={inicioSesion}>iniciar sesion</button>
+                </div>
             </div>
-            <h4 >Usuario actual {saveLogin}</h4>
+            <h4 className='titulo'> {saveLogin}</h4>
            
-            <button onClick={cierreSesion}>Cerrar sesion</button>
+           {/*} <button className="mx-auto" onClick={cierreSesion}>Cerrar sesion</button>*/}
         </div>
     )
 }
