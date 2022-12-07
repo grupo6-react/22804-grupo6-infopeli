@@ -28,7 +28,6 @@ const Login = () =>{
         try{
             const user = await createUserWithEmailAndPassword(auth,registerEmail, registerPassword);
             Swal.fire('Usuario Registrado con exito');
-           
         }
       catch(error) {
         if ((registerEmail === '' || registerPassword=== '')) {
@@ -55,20 +54,15 @@ const Login = () =>{
         console.log(error.message)
       }
     } 
-
-    const cierreSesion = async ()  =>{
-      await signOut(auth);
-      setSaveLoginEmail('');
-    } 
     
     return (
         <div className='login'>
             <div className='divRegistro'>
                 <h3 className='titulo'>Registro de usuario </h3>
                 <div className='registro'>
-                <input className="form-control  m-auto mb-3"   placeholder='ingrese su email'  onChange={(event)=> {setRegisterEmail(event.target.value)}}/>
-                <input className="form-control m-auto mb-3" placeholder='ingrese su coontraseña'  onChange={(event)=> {setRegisterPassword(event.target.value)}}/>
-                <button className="mx-auto" onClick={registro}>Crear usuario</button>
+                <input id="register" className="form-control  m-auto mb-3"   placeholder='ingrese su email'  onChange={(event)=> {setRegisterEmail(event.target.value)}}/>
+                <input id="password" className="form-control m-auto mb-2" placeholder='ingrese su coontraseña'  onChange={(event)=> {setRegisterPassword(event.target.value)}}/>
+                <button className=" btn btn-warning mx-auto" onClick={registro}>Crear usuario</button>
                 </div>
             </div>
 
@@ -76,13 +70,13 @@ const Login = () =>{
                 <h3 className='titulo'>Inicio  de sesion</h3>
                 <div className='login'>
                 <input className="form-control  m-auto mb-3"  placeholder='ingrese su email'  onChange={(event)=> {setLoginEmail(event.target.value)}}/>
-                <input className="form-control  m-auto mb-3" placeholder='ingrese su coontraseña'  onChange={(event)=> {setLoginPassword(event.target.value)}}/>
-                <button className="mx-auto" onClick={inicioSesion}>iniciar sesion</button>
+                <input className="form-control  m-auto mb-2" placeholder='ingrese su coontraseña'  onChange={(event)=> {setLoginPassword(event.target.value)}}/>
+                <button className=" btn btn-warning mx-auto " onClick={inicioSesion}>iniciar sesion</button>
                 </div>
             </div>
             <h4 className='titulo'> {saveLogin}</h4>
            
-           {/*} <button className="mx-auto" onClick={cierreSesion}>Cerrar sesion</button>*/}
+           
         </div>
     )
 }

@@ -15,7 +15,7 @@ const Home = () => {
   return <div>Home
     <Link to="/irAlogin">login</Link>
     <h4 >Usuario:{saveLogin}</h4>
-   <button onClick={cierreSesion}>Cerrar sesion</button>
+   <button className='btn btn-warning' onClick={cierreSesion}>Cerrar sesion</button>
   </div>;
 };
 
