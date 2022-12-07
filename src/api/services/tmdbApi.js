@@ -18,7 +18,7 @@ const tmdbApi = {
   // Documentation: https://developers.themoviedb.org/3/search/search-movies
 
   getBySearch: async (classification, query) => {
-    const url = `/search/'${classification}'?query='${query}`;
+    const url = `/search/${classification}?query='${query}`;
     const response = await axios.get(url);
     return response.data;
   },
@@ -58,7 +58,7 @@ const tmdbApi = {
   // Documentation: https://developers.themoviedb.org/3/movies/get-top-rated-movies
 
   getTopRated: async (classification) => {
-    const url = `/'${classification}'/top_rated`;
+    const url = `/${classification}/top_rated`;
     const response = await axios.get(url);
     return response.data;
   },
@@ -66,7 +66,7 @@ const tmdbApi = {
   // Get Latest: Get the most newly created movie or TV show. This is a live response and will continuously change.
   // Documentation: https://developers.themoviedb.org/3/movies/get-latest-movie
   getLatest: async (classification) => {
-    const url = `/'${classification}'/latest`;
+    const url = `/${classification}/latest`;
     const response = await axios.get(url);
     return response.data;
   },
@@ -79,7 +79,7 @@ const tmdbApi = {
   // Get Best From 2022: Get best movies or TV shows from 2022
 
   getBestFrom2022: async (classification) => {
-    const url = `/discover/'${classification}'?primary_release_year=2022&sort_by=vote_average.desc`;
+    const url = `/discover/${classification}?primary_release_year=2022&sort_by=vote_average.desc`;
     const response = await axios.get(url);
     return response.data;
   },
@@ -87,7 +87,7 @@ const tmdbApi = {
   // Get Highest Rated: Get the highest rated movies or TV shows rated R certification
 
   getHighestRated: async (classification) => {
-    const url = `/discover/'${classification}'?certification_country=US&certification=R&sort_by=vote_average.desc`;
+    const url = `/discover/${classification}?certification_country=US&certification=R&sort_by=vote_average.desc`;
     const response = await axios.get(url);
     return response.data;
   },
@@ -95,7 +95,7 @@ const tmdbApi = {
   // Get Most Popular Kids: Get the most popular kids movies or TV shows
 
   getMostPopularKids: async (classification) => {
-    const url = `/discover/'${classification}'?certification_country=US&certification.lte=G&sort_by=popularity.desc`;
+    const url = `/discover/${classification}?certification_country=US&certification.lte=G&sort_by=popularity.desc`;
     const response = await axios.get(url);
     return response.data;
   },
@@ -132,6 +132,44 @@ const tmdbApi = {
 
   getNetflixOriginals: async () => {
     const url = `/discover/tv?with_networks=213`;
+    const response = await axios.get(url);
+    return response.data;
+  },
+
+  /* MORE */
+
+  // Get a list of recommended movies for a movie.
+  // https://developers.themoviedb.org/3/movies/get-movie-recommendations
+
+  getRecommendations: async (movie_id) => {
+    const url = `/movie/${movie_id}/recommendations`;
+    const response = await axios.get(url);
+    return response.data;
+  },
+
+  // Get the user reviews for a movie.
+  // https://developers.themoviedb.org/3/movies/get-movie-reviews
+
+  getReviews: async (movie_id) => {
+    const url = `/movie/${movie_id}/reviews`;
+    const response = await axios.get(url);
+    return response.data;
+  },
+
+  // Get the videos that have been added to a movie.
+  // https://developers.themoviedb.org/3/movies/get-movie-videos
+
+  getVideos: async (movie_id) => {
+    const url = `/movie/${movie_id}/videos`;
+    const response = await axios.get(url);
+    return response.data;
+  },
+
+  // Get a list of the availabilities per country by provider.
+  // https://developers.themoviedb.org/3/movies/get-movie-watch-providers
+
+  getWatchProviders: async (movie_id) => {
+    const url = `/movie/${movie_id}/watch/providers`;
     const response = await axios.get(url);
     return response.data;
   },
