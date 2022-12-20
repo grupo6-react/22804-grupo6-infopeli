@@ -1,0 +1,17 @@
+.form-contacto{
+    padding: 100px 0 0 0;
+    margin: auto;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+input{
+    margin: auto;
+}
+p{
+    color: #bf1650;
+}
+button{
+    padding: 20px;
+}
