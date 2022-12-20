@@ -1,3 +1,4 @@
+/*import fuente utilizada en el proyecto*/
 @import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;500;700&display=swap');
 
 /*DIV CONTENEDORES*/
@@ -19,7 +20,7 @@ input {
     padding: 1rem;
 }
 
- 
+/* media queries*/
 @media only screen and (max-width: 480px)  {
     input{
         width: 70% !important;
