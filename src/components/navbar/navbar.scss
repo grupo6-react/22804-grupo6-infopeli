@@ -77,7 +77,7 @@
 
   .header {
     height: 8rem;
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -126,7 +126,7 @@
             }
         }
         @include mobile {
-          position: fixed;
+          position: relative;
           bottom: 0;
           left: 0;
           height: 5rem;
