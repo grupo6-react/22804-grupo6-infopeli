@@ -3,7 +3,7 @@ import { get } from "../utils/Cliente";
 import { MovieCard } from "./MovieCard";
 import styles from "./MoviesFlex.module.css";
 
-
+// trayendo la lista de peliculas 
 export function MoviesFlex() {
   const [movies, setMovies] = useState([]);
 

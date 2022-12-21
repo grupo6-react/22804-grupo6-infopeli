@@ -9,3 +9,4 @@ export function get(path) {
     },
   }).then((result) => result.json());
 }
+// funcion reutilable para llamar a las peliculas
