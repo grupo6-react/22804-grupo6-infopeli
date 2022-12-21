@@ -10,7 +10,7 @@
     flex-direction: column;
 }
 
-input {
+.login input {
     width: 25% !important;
 }
 /* h3 y h4*/
@@ -21,13 +21,13 @@ input {
 
  
 @media only screen and (max-width: 480px)  {
-    input{
+    .login input{
         width: 70% !important;
     }
 }
 
 @media only screen and (min-width: 480px) and (max-width:780px) {
-    input{
+    .login input{
         width: 50% !important;
     }
 }
