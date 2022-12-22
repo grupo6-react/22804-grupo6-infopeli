@@ -10,9 +10,12 @@
     display: flex;
     flex-direction: column;
 }
-
-input {
+.login input {
     width: 25% !important;
+}
+/*BOTONES*/
+.botones{
+    max-width: 125px; 
 }
 /* h3 y h4*/
 .titulo{
@@ -20,7 +23,30 @@ input {
     padding: 1rem;
 }
 
-/* media queries*/
+/*Datos del login en HOME*/
+/*div contenedor*/
+.login-container{
+    display: flex;
+    justify-content: flex-end;
+}
+.datosLogin {
+    max-width: 544px;
+    margin: 0 auto;
+    max-height: 109px;
+    max-width: 280px;
+    border: 1px solid;
+    margin: 0.5rem;
+    padding: 15px;
+    text-align: center; 
+    right: 12px;
+}
+/*boton CERRAR SESION*/
+.btn-cierre-sesion{
+    max-width: 125px;
+    margin: 0 !important;
+}
+
+ 
 @media only screen and (max-width: 480px)  {
     input{
         width: 70% !important;

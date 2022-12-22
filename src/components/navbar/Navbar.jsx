@@ -12,7 +12,11 @@ const headerNav = [
   {
       display: 'Movies',
       path: '/movie'
-  }
+  },
+  {
+    display: 'Login',
+    path: '/irAlogin'
+}
 ];
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -29,6 +33,7 @@ const Navbar = () => {
         <div className="container">
           <div className="left">
           <Link to={'Home'}>
+        
           <div className="logo">
           <img src={logo} alt="" />
             <span>tMovies</span>
