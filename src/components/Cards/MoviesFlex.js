@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { get } from "../utils/Cliente";
 import { MovieCard } from "./MovieCard";
-import styles from "./MoviesFlex.module.css";
+import styles from "./moviesFlex.module.css";
 
 // trayendo la lista de peliculas 
 export function MoviesFlex() {

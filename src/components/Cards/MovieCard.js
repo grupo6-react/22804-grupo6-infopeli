@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "./MovieCard.module.css";
+import styles from "./movieCard.module.css";
 
 //funcion que trae el poster y titulo de la pelicula dentro de la card
 export function MovieCard({ movie }) {
@@ -13,7 +13,6 @@ export function MovieCard({ movie }) {
             className={styles.movieImage}
             src={imageUrl}
             alt={movie.title} />
-          <div>{movie.title}</div>
         </Link>
       </li>
     );

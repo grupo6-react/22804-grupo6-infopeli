@@ -3,7 +3,7 @@
     flex-direction: row;
     padding: 40px;
     justify-content: center;
-    list-style: none;
+   
   }
   
   @media (max-width: 560px) {
