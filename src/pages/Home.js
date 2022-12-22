@@ -1,18 +1,19 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import{auth} from '../firebaseConfig';
-import {signOut} from 'firebase/auth'
-import Navbar from '../components/navbar/Navbar'
+import { Link } from 'react-router-dom';
+import { auth } from '../firebaseConfig';
+import { signOut } from 'firebase/auth';
+import Navbar from '../components/navbar/Navbar';
 import Featured from '../components/featured/Featured';
+import { MoviesFlex } from '../components/Cards/MoviesFlex';
 import '../Login.css';
-import {useLoginContext} from '../UserProvider';
+import { useLoginContext } from '../UserProvider';
 
 const Home = () => {
-  const cierreSesion = async ()  =>{
+  const cierreSesion = async () => {
     await signOut(auth);
     setSaveLoginEmail('');
-  } 
-  const {saveLogin, setSaveLoginEmail} = useLoginContext()
+  };
+  const { saveLogin, setSaveLoginEmail } = useLoginContext();
 
   return <div>
      
@@ -25,6 +26,7 @@ const Home = () => {
     </div>
     <Navbar />
     <Featured />
+    <MoviesFlex />
   </div>;
 };
 

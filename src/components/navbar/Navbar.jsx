@@ -36,7 +36,7 @@ const Navbar = () => {
         
           <div className="logo">
           <img src={logo} alt="" />
-            <span>tMovies</span>
+            <span>E-Movies</span>
             </div>
             </Link>
              </div>

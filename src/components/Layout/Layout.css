@@ -3,10 +3,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
 body{
-    background-color: black;
+    background-color: rgb(35, 32, 32);
     color: #fff;
     font-family: 'Hind Madurai', sans-serif;    
 }
