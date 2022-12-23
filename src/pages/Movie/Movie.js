@@ -6,7 +6,6 @@ import './movie.css';
 const Movie = () => {
   const [movie, setMovie] = useState([]);
   const [movieCredits, setMovieCredits] = useState([]);
-  const [error, setError] = useState();
 
   const { movie_id } = useParams();
 
@@ -30,7 +29,6 @@ const Movie = () => {
       console.log(err);
     }
   };
-  console.log(movie);
 
   return (
     <div>
