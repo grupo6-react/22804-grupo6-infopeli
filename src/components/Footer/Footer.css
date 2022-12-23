@@ -2,6 +2,7 @@
   padding: 40px 80px;
   justify-content: center;
   text-align: center;
+  /* fondo imagen para footer */
   background-image: url(../../assets/bannerSL.png);
   background-size: contain;
   background-repeat:repeat-x;

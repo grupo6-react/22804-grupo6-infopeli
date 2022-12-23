@@ -2,9 +2,13 @@ import './Footer.css';
 import logo from '../../assets/logo200.png'; 
 import { Link } from 'react-router-dom'; 
 
+
+
+/* funcion para traer footer */
 const Footer =()=>{
   return(
     <div className='footer-contenedor'>
+      
       <img className='logo-emovies' src={logo} alt="logo-emovies" /> 
       <div className="footer-menu-contenedor"> 
         <section className="footer-col">
