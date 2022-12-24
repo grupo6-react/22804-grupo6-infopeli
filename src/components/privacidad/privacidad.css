@@ -11,4 +11,26 @@
 .subcontainer-privacidad{
     width: 70%;
     margin: auto;
+    font-weight: 300;
+}
+.h2-privacidad{
+    font-size: 3rem;
+    font-weight: 900;
+}
+.text-privacidad{
+    font-size: 1rem;
+}
+.bold{
+    font-weight: 500;
+}
+.subcontainer-privacidad li {
+    list-style: none;
+}
+.subcontainer-privacidad span{
+    padding-bottom: 20px;
+}
+span.end-textPrivacidad{
+    display: block;
+    padding-top: 30px;
+    font-weight: 400;
 }
