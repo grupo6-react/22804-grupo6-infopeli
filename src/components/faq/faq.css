@@ -1,0 +1,19 @@
+.container-faq{
+    background-color: rgba(246, 245, 245, 1);
+    padding: 100px 0 50px 0;
+    margin-bottom: 0px;
+}
+.subcontainer-faq{
+    width: 70%;
+    margin: auto;
+}
+.h3-faq{
+    color: rgb(20, 19, 19);
+}
+.text-question{
+    color: rgb(20, 19, 19);
+    margin-bottom: 0;
+}
+.list-faq::marker{
+    content: '> ';
+}
