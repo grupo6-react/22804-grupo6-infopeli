@@ -19,11 +19,11 @@ p{
     font-weight: 300;
     margin-bottom: 0;
 }
-li{
+.estudiantes-acercade{
     color: rgb(83, 83, 158);
     font-weight: 600;
     font-size: 1.15rem;
-    padding: 3px 0;
+    padding: 10px 0;
 }
 .w{
     font-size: 1.4rem;

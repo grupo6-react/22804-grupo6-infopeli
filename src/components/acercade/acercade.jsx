@@ -29,7 +29,7 @@ export const AcercaDe = () =>{
     ]
 
     const estudiantes = Object.keys(estudiantesNombres).map((element,index) => {
-        return <li key={index}>{element} - {estudiantesNombres[element]} <a href={githubEstudiantes[index]} target='_blank'>  <AiFillGithub className="w"/></a></li>
+        return <li key={index} className='estudiantes-acercade'>{element} - {estudiantesNombres[element]} <a href={githubEstudiantes[index]} target='_blank'>  <AiFillGithub className="w"/></a></li>
     })
 
     return (

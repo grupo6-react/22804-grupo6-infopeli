@@ -44,7 +44,7 @@ export const Faq = () => {
     return (
         <div className="container-faq">
             <div className="subcontainer-faq">
-                <h2>Preguntas Frecuentes</h2>
+                <h2 className='h2-faq'>Preguntas Frecuentes</h2><hr />
                 <div>
                     <h3 className='h3-faq'>Recuperacion de cuenta</h3>
                     <Preguntas preg="primero"/>
