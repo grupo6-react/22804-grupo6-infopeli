@@ -4,7 +4,7 @@ export const Privacidad = () =>{
     return (
         <div className="container-privacidad">
             <div className='subcontainer-privacidad'>
-                <h2 className="h2-privacidad">Politicas de Privacidad</h2><hr />
+                <h2 className="h2-privacidad">POLITICAS DE PRIVACIDAD</h2><hr />
                 <div>
                     <p className='text-privacidad'>
                         Esta política describe cómo e-Movies recopila, utiliza y divulga cierta información, incluida su información personal, tanto en línea como fuera de línea, y las selecciones que usted puede hacer sobre esa información.

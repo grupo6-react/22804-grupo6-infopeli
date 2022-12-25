@@ -9,6 +9,7 @@ export const Contacto = () => {
     return (
         <div className='container-contacto'>
             <div className='subcontainer-contacto'>
+                <h2>CONTACTATE CON NOSOTROS</h2><hr />
                 <form className='form-contacto' onSubmit={submitContacto}>
                     <div className='container-name-email'>
                         <label 

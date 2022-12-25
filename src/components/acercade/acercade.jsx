@@ -36,7 +36,7 @@ export const AcercaDe = () =>{
         <div className="container-acercade">
             <div className="subcontainer-acercade">
                 <img src="" alt="" />
-                <h2>Acerca de Nosotros</h2>
+                <h2>ACERCA DE NOSOTROS</h2>
                 <hr />
                 <div className="presentation-personal">
                     <h3>Desarrolladores</h3>
