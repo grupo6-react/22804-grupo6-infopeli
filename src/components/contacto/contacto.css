@@ -2,15 +2,14 @@
     width: 100%;
     background-color: #ecf3ec;
 }
-
 .form-contacto{
-    padding: 100px 0 0 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: #131513;
 }
 .subcontainer-contacto{
+    color: #131513;
+    padding: 100px 0 0 0;
     margin: auto;
     width: 65%;
 }
