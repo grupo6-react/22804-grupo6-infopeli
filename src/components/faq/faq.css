@@ -1,0 +1,38 @@
+:root{
+    --color-text: rgb(20, 19, 19);
+    --color-background: rgba(246, 245, 245, 1);
+}
+.container-faq{
+    background-color: var(--color-background);
+    padding: 100px 0 50px 0;
+    margin-bottom: 0px;
+    color: var(--color-text);
+}
+.subcontainer-faq{
+    width: 70%;
+    margin: auto;
+}
+.h3-faq,.h2-faq{
+    color: var(--color-text)
+}
+.h3-faq{
+    color:rgb(21, 24, 23);
+    font-weight: 500;
+}
+
+hr{
+    color: var(--color-text);
+}
+.text-question{
+    color: var(--color-text);
+    margin-bottom: 0;
+}
+.list-faq{
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: rgb(53, 79, 104);
+}
+.list-faq::marker{
+    content: '> ';
+    font-size: 1.2rem;
+}

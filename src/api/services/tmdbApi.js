@@ -34,6 +34,28 @@ const tmdbApi = {
 
   /* --- MOVIES --- */
 
+  // Get the primary information about a movie.
+  // Documentation: https://developers.themoviedb.org/3/movies/get-movie-details
+
+  getMovie: async (movie_id) => {
+    try {
+      const url = `/movie/${movie_id}`;
+      const response = await axios.get(url);
+      return response.data;
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
+  // Get the cast and crew for a movie.
+  // Documentation: https://developers.themoviedb.org/3/movies/get-movie-credits
+
+  getMovieCredits: async (movie_id) => {
+    const url = `/movie/${movie_id}/credits`;
+    const response = await axios.get(url);
+    return response.data;
+  },
+
   // Get Now Playing: Get a list of movies in theatres.
   // Documentation: https://developers.themoviedb.org/3/movies/get-now-playing
 

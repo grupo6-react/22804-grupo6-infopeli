@@ -1,10 +1,17 @@
+.container-contacto{
+    width: 100%;
+    background-color: #ecf3ec;
+}
 .form-contacto{
-    padding: 100px 0 0 0;
-    margin: auto;
-    width: 65%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+.subcontainer-contacto{
+    color: #131513;
+    padding: 100px 0 0 0;
+    margin: auto;
+    width: 65%;
 }
 .container-name-email{
     width: 100%;
