@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   background-color: lightgray;
-  height: 100vh;
+  padding: 25px 0;
 }
 h3 {
   color: black;
