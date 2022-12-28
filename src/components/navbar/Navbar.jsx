@@ -12,7 +12,7 @@ const headerNav = [
   },
   {
     display: 'Movies',
-    path: '/movie',
+    path: '/movies',
   },
 ];
 const Navbar = () => {
