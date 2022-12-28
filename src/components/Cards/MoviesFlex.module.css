@@ -3,12 +3,13 @@
   flex-direction: column;
   justify-content: center;
   background-color: lightgray;
-  padding: 25px;
+  height: 100vh;
 }
 h3 {
   color: black;
   margin-left: 250px;
   margin-bottom: 20px;
+  font-style: italic;
 }
 .container {
   height: fit-content;
@@ -21,7 +22,6 @@ h3 {
   margin-top: 20px;
   padding: 0 2rem;
 }
-
 .swiper-pagination-bullet {
   background-color: black;
   height: 10px;
@@ -30,11 +30,6 @@ h3 {
   opacity: 0.5;
   cursor: pointer;
   border-radius: 100%;
-}
-
-.swiper-pagination-bullet-active {
-  background-color: rgb(255, 162, 0);
-  opacity: 1;
 }
 
 @media (max-width: 560px) {

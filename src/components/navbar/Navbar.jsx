@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './navbar.scss';
-import logo from '../../assets/logoAALV.png';
+import logoInsti from '../../assets/logoAALV.png';
+import logo from '../../assets/logo200.png'; 
 import { useLoginContext } from '../../UserProvider';
 import Profile from '../Profile/Profile';
 
@@ -33,8 +34,10 @@ const Navbar = () => {
           <div className="left">
             <Link to={'/'}>
               <div className="logo">
-                <img src={logo} alt="" />
-                <span>E-Movies</span>
+                {/* cambio de nombre de logo institucional */}
+                <img src={logoInsti} alt="" />
+                {/* logo de pagina agregado */}
+                <img className='logo-emovies' src={logo} alt="logo-emovies" /> 
               </div>
             </Link>
           </div>
