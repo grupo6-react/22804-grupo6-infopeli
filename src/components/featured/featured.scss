@@ -43,18 +43,19 @@
           cursor: pointer;
           
           &.play {
-            
-            background-color: white !important;
+            /* cambio de color botones */
+            background-color: #ffe066 !important;
             a{
               text-decoration: none;
-              color: #0b0b0b !important;
+              color: #000 !important;
            
             }
              }
   
           &.more {
-            background-color: gray;
-            color: white;
+            /* cambio de color botones */
+            background-color: #ffe066;;
+            color: #000;
           }
   
           span {

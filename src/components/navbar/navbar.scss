@@ -1,3 +1,4 @@
+
 @mixin mobile {
   @media only screen and (max-width: 600px) {
     @content;
@@ -10,8 +11,6 @@
   justify-content: $justify-content;
 }
 .logo {
-  font-size: 2.5rem;
-  font-weight: 600;
 
   @include flex(center, unset);
 
@@ -32,8 +31,7 @@
   top: 0;
   z-index: 999;
   background: linear-gradient(to top, transparent 0%, rgb(0, 0, 0, 0.3) 50%);
-
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Hind Madurai', sans-serif; 
 
   &.scrolled {
     background-color: #0b0b0b;
@@ -74,9 +72,9 @@
   a {
     color: white;
     text-decoration: none;
-
+/* cambio de color*/
     &:hover {
-      color: red;
+      color: #ffe066;;
     }
   }
 
@@ -104,7 +102,8 @@
         width: 0;
         transition: width 0.5s ease;
         height: 2px;
-        background-color: #ff0000;
+        /* cambio de color*/
+        background-color: #ffe066;;
       }
 
       &.active::after,
