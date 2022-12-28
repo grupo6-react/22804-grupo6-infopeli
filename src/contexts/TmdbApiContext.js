@@ -21,21 +21,39 @@ export function TmdbApiContextProvider(props) {
   const [netflixOriginals, setNetflixOriginals] = useState([]);
 
   useEffect(() => {
-    setMoviesTrending(tmdbApi.getTrending());
-    setMoviesUpComing(tmdbApi.getUpcoming());
-    setMoviesTopRated(tmdbApi.getTopRated('movie'));
-    setSeriesTopRated(tmdbApi.getTopRated('tv'));
-    setMoviesLatest(tmdbApi.getLatest('movie'));
-    setSeriesLatest(tmdbApi.getLatest('tv'));
-    setBestMoviesFrom2022(tmdbApi.getBestFrom2022('movie'));
-    setBestSeriesFrom2022(tmdbApi.getBestFrom2022('tv'));
-    setPopularKidsMovies(tmdbApi.getMostPopularKids('movie'));
-    setPopularKidsSeries(tmdbApi.getMostPopularKids('tv'));
-    setHorrorMovies(tmdbApi.getHorrorMovies());
-    setComedyMovies(tmdbApi.getComedyMovies());
-    setActionMovies(tmdbApi.getActionMovies());
-    setNetflixOriginals(tmdbApi.getNetflixOriginals());
+    fetchMovies();
   }, []);
+
+  const fetchMovies = async () => {
+    const resTrending = await tmdbApi.getTrending();
+    setMoviesTrending(resTrending.results);
+    const resUpComing = await tmdbApi.getUpcoming();
+    setMoviesUpComing(resUpComing.results);
+    const resMoviesTopRated = await tmdbApi.getTopRated('movie');
+    setMoviesTopRated(resMoviesTopRated.results);
+    const resSeriesTopRated = await tmdbApi.getTopRated('tv');
+    setSeriesTopRated(resSeriesTopRated.results);
+    const resMoviesLatest = await tmdbApi.getLatest('movie');
+    setMoviesLatest(resMoviesLatest.results);
+    const resSeriesLatest = await tmdbApi.getLatest('tv');
+    setSeriesLatest(resSeriesLatest.results);
+    const resBestMoviesFrom2022 = await tmdbApi.getBestFrom2022('movie');
+    setBestMoviesFrom2022(resBestMoviesFrom2022.results);
+    const resBestSeriesFrom2022 = await tmdbApi.getBestFrom2022('tv');
+    setBestSeriesFrom2022(resBestSeriesFrom2022.results);
+    const resPopularKidsMovies = await tmdbApi.getMostPopularKids('movie');
+    setPopularKidsMovies(resPopularKidsMovies.results);
+    const resPopularKidsSeries = await tmdbApi.getMostPopularKids('tv');
+    setPopularKidsSeries(resPopularKidsSeries.results);
+    const resHorrorMovies = await tmdbApi.getHorrorMovies();
+    setHorrorMovies(resHorrorMovies.results);
+    const resComedyMovies = await tmdbApi.getComedyMovies();
+    setComedyMovies(resComedyMovies.results);
+    const resActionMovies = await tmdbApi.getActionMovies();
+    setActionMovies(resActionMovies.results);
+    const resNetflixOriginals = await tmdbApi.getNetflixOriginals();
+    setNetflixOriginals(resNetflixOriginals.results);
+  };
 
   const value = {
     moviesBySearch,
