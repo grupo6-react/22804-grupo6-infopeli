@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import tmdbApi from '../../api/services/tmdbApi';
 import { useParams } from 'react-router-dom';
 import './movie.css';
+import Galeria from '../../components/galeria/galeria';
 
 const Movie = () => {
   const [movie, setMovie] = useState([]);
@@ -72,6 +73,7 @@ const Movie = () => {
                   .slice(0, 5)}
             </ul>
           </div>
+          <Galeria></Galeria>
         </div>
       </div>
     </div>
