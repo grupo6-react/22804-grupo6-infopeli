@@ -1,10 +1,47 @@
-.moviesFlex {
+
+.moviesFlex{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  background-color: lightgray;
+}
+h3{
+  color: black;
+  margin-left: 250px;
+  margin-bottom: 20px;
+
+
+ 
+}
+  .container {
+    height: fit-content;
     display: flex;
-    flex-direction: row;
-    padding: 40px;
-    justify-content: center;
-   
+    flex-direction: column;
+    gap: 25px;
   }
+    .swiperContainer {
+      overflow-x: hidden;
+      margin-top: 20px;
+      padding: 0 2rem;
+    }
+  
+
+ .swiper-pagination-bullet {
+    background-color: black;
+    height: 10px;
+    width: 10px;
+    margin-right: 6px;
+    opacity: 0.5;
+    cursor: pointer;
+    border-radius: 100%;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: rgb(255, 162, 0);
+    opacity: 1;
+  }
+
   
   @media (max-width: 560px) {
     .moviesFlex {
