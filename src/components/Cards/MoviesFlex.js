@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { get } from "../utils/Cliente";
 import { MovieCard } from "./MovieCard";
-import styles from "./moviesFlex.module.css";
+import styles from "./MoviesFlex.module.css";
 import { SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper";
 import { Swiper } from "swiper/react";

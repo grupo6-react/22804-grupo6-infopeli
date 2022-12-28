@@ -10,9 +10,6 @@ h3{
   color: black;
   margin-left: 250px;
   margin-bottom: 20px;
-
-
- 
 }
   .container {
     height: fit-content;
@@ -25,9 +22,7 @@ h3{
       margin-top: 20px;
       padding: 0 2rem;
     }
-  
-
- .swiper-pagination-bullet {
+  .swiper-pagination-bullet {
     background-color: black;
     height: 10px;
     width: 10px;

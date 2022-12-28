@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "./movieCard.module.css";
+import styles from "./MovieCard.module.css";
 
 
 //funcion que trae el poster y titulo de la pelicula dentro de la card
