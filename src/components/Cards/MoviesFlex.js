@@ -18,7 +18,7 @@ export function MoviesFlex() {
   }, []);
   return ( 
     <div className={styles.moviesFlex}>
-      <h3>Las mas recomendadas </h3>
+      <h3>Solo para ti </h3>
         <div className="container">
           <div className="swiperContainer">
            <Swiper
@@ -65,6 +65,7 @@ export function MoviesFlex() {
                      <SwiperSlide>
                        <><MovieCard  key={movie.id} movie={movie} /></>
                      </SwiperSlide>
+                     
                    ))}
                  </ul>
             </Swiper>
