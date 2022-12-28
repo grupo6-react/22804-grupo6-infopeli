@@ -4,7 +4,7 @@ export const Terminos = () => {
     return (
         <div className="container-terminos">
             <div className="subcontainer-terminos">
-                <h2>TÉRMINOS DE USO</h2><hr />
+                <h2 className='h2-terminos'>TÉRMINOS DE USO</h2><hr />
                 <p>
                     Bienvenido a e-Movies. Siga leyendo para conocer las reglas y restricciones que rigen el uso de nuestros sitios web, productos, servicios, aplicaciones y las programación audiovisual incluida en los mismos (los «Servicios»). Si tiene alguna pregunta, comentario o inquietud con respecto a estos términos o los Servicios, póngase en contacto con nosotros.
                 </p>

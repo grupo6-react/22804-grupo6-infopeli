@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,700;0,800;1,900&display=swap');
+
 :root{
     --color-text: rgb(20, 19, 19);
     --color-background: rgba(246, 245, 245, 1);
@@ -7,10 +9,16 @@
     padding: 100px 0 50px 0;
     margin-bottom: 0px;
     color: var(--color-text);
+    font-family: 'Work Sans', sans-serif;
 }
 .subcontainer-faq{
     width: 70%;
     margin: auto;
+}
+.h2-faq{
+    font-size: 2.5rem;
+    font-weight: 500;
+    font-family: 'Work Sans', sans-serif;
 }
 .h3-faq,.h2-faq{
     color: var(--color-text)
@@ -19,7 +27,9 @@
     color:rgb(21, 24, 23);
     font-weight: 500;
 }
-
+.subcontainer-faq p{
+    font-size: 1rem;
+}
 hr{
     color: var(--color-text);
 }
@@ -28,9 +38,7 @@ hr{
     margin-bottom: 0;
 }
 .list-faq{
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: rgb(53, 79, 104);
+    font-weight: 600;
 }
 .list-faq::marker{
     content: '> ';
