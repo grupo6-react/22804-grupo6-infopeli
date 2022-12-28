@@ -2,9 +2,8 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './navbar.scss';
 import logo from '../../assets/logoAALV.png';
-import { auth } from '../../firebaseConfig';
-import { signOut } from 'firebase/auth';
 import { useLoginContext } from '../../UserProvider';
+import Profile from '../Profile/Profile';
 
 const headerNav = [
   {
@@ -13,11 +12,7 @@ const headerNav = [
   },
   {
     display: 'Movies',
-    path: '/movie',
-  },
-  {
-    display: 'Login',
-    path: '/irAlogin',
+    path: '/movies',
   },
 ];
 const Navbar = () => {
@@ -30,11 +25,7 @@ const Navbar = () => {
     return () => (window.onscroll = null);
   };
 
-  const cierreSesion = async () => {
-    await signOut(auth);
-    setSaveLoginEmail('');
-  };
-  const { saveLogin, setSaveLoginEmail } = useLoginContext();
+  const { saveLogin } = useLoginContext();
   return (
     <div className="header">
       <div className={isScrolled ? 'navbar_ scrolled' : 'navbar_'}>
@@ -54,20 +45,10 @@ const Navbar = () => {
                   <Link to={e.path}>{e.display}</Link>
                 </li>
               ))}
+              <li>{!saveLogin && <Link to={'/irAlogin'}>Login</Link>}</li>
             </ul>
           </div>
-          <div className="login-container">
-            <div className="datosLogin">
-              {/*<Link to="/irAlogin">login</Link>*/}
-              <h5>Usuario:{saveLogin}</h5>
-              <button
-                className="btn-cierre-sesion btn btn-warning "
-                onClick={cierreSesion}
-              >
-                Cerrar sesion
-              </button>
-            </div>
-          </div>
+          {saveLogin && <Profile />}
         </div>
       </div>
     </div>
