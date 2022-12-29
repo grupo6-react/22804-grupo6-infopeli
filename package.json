@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^3.10.0",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/icons-material": "^5.11.0",
@@ -23,7 +24,8 @@
     "react-scripts": "^5.0.1",
     "react-youtube": "^10.1.0",
     "reactstrap": "^9.1.5",
-    "sweetalert2": "^11.6.15",
+    "sweetalert2": "^11.6.16",
+    "swiper": "^8.4.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

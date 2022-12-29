@@ -9,11 +9,9 @@ export const AcercaDe = () =>{
         'Berruti Hector': 'Subrepresentante de proyecto',
         'Dunne Glenda': 'Desarrolladora Front-End',
         'Romero Virginia': 'Desarrolladora Front-End',
-        'Ledesma Diego': 'Desarrolladora Front-End',
         'Arias Josiane': 'Desarrolladora Front-End',
         'Ghirardi Maximiliano': 'Desarrolladora Front-End',
         'Aguirre Matias': 'Desarrolladora Front-End',
-        'Wolf Leonardo': 'Desarrolladora Front-End'
     }
 
     const githubEstudiantes = [
@@ -21,11 +19,9 @@ export const AcercaDe = () =>{
         'https://github.com/TitoBerru',
         'https://github.com/Glenda76',
         'https://github.com/VirAyma21',
-        'https://github.com/DiegoLed',
         'https://github.com/likejosiane',
         'https://github.com/mgmaxi',
-        'https://github.com/MatiasAguirre26',
-        'https://github.com/leoqw13'
+        'https://github.com/MatiasAguirre26'
     ]
 
     const estudiantes = Object.keys(estudiantesNombres).map((element,index) => {
@@ -36,7 +32,7 @@ export const AcercaDe = () =>{
         <div className="container-acercade">
             <div className="subcontainer-acercade">
                 <img src="" alt="" />
-                <h2>ACERCA DE NOSOTROS</h2>
+                <h2 className="h2-acercade">ACERCA DE NOSOTROS</h2>
                 <hr />
                 <div className="presentation-personal">
                     <h3>Desarrolladores</h3>
