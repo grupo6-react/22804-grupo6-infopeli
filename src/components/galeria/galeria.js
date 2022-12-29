@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import logo from './img1.jpg';
 import '../../pages/Movie/movie.css';
 
-//Para personalizar las flechas del carrousel
+//Funciones para personalizar las flechas del carrousel
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
@@ -31,7 +31,7 @@ function SamplePrevArrow(props) {
   );
 }
 
-//Exportar el componente
+//Exportar el componente "Galeria"
 export default class Galeria extends Component { 
 
   constructor(props) {
@@ -48,9 +48,6 @@ export default class Galeria extends Component {
       nav2: this.slider2
     });
   }
-
-
-
 
   render() {
     //Configuracion de las propiedades del carrousel
@@ -72,13 +69,17 @@ export default class Galeria extends Component {
       ]
     }
     return (
+    //Estructura HTML del carrusel
     <div className="container">
         <h2>Trailers</h2>
+        {/*Slider principal, donde se hace foco lo que se esta mostrando */}
         <Slider
           asNavFor={this.state.nav2}
           ref={slider => (this.slider1 = slider)}
           {...settings}
         >
+
+          {/*Divs con los contenidos a monstrar*/}
           <div>
             <img src={logo} alt="logo" />
           </div>
@@ -98,7 +99,9 @@ export default class Galeria extends Component {
             <img src={logo} alt="logo1" />
           </div>
         </Slider>
+
         <h4>Más trailers</h4>
+        {/*Slider secundario, donde se encuentran los contenidos secundarios */}
         <Slider
           asNavFor={this.state.nav1}
           ref={slider => (this.slider2 = slider)}
@@ -106,8 +109,10 @@ export default class Galeria extends Component {
           swipeToSlide={true}
           focusOnSelect={true}
           >
+          
+          {/*Divs con los contenidos a monstrar*/}
           <div>
-          <img src={logo} alt="logo1"/>
+            <img src={logo} alt="logo1"/>
           </div>
           <div>
             <img src={logo} alt="logo1"/>
