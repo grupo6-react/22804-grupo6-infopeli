@@ -1,46 +1,39 @@
-
-.moviesFlex{
+.moviesFlex {
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: lightgray;
- height: 100vh;
+  padding: 25px 0;
 }
-h3{
-  color:black;
+h3 {
+  color: black;
   margin-left: 250px;
   margin-bottom: 20px;
   font-style: italic;
 }
-  .container {
-    height: fit-content;
-    display: flex;
+.container {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.swiperContainer {
+  overflow-x: hidden;
+  margin-top: 20px;
+  padding: 0 2rem;
+}
+.swiper-pagination-bullet {
+  background-color: black;
+  height: 10px;
+  width: 10px;
+  margin-right: 6px;
+  opacity: 0.5;
+  cursor: pointer;
+  border-radius: 100%;
+}
+
+@media (max-width: 560px) {
+  .moviesFlex {
     flex-direction: column;
-    gap: 25px;
   }
-    .swiperContainer {
-      overflow-x: hidden;
-      margin-top: 20px;
-      padding: 0 2rem;
-    }
-  .swiper-pagination-bullet {
-    background-color: black;
-    height: 10px;
-    width: 10px;
-    margin-right: 6px;
-    opacity: 0.5;
-    cursor: pointer;
-    border-radius: 100%;
-  }
-
-  .swiper-pagination-bullet-active {
-    background-color: rgb(255, 162, 0);
-    opacity: 1;
-  }
-
-  
-  @media (max-width: 560px) {
-    .moviesFlex {
-      flex-direction: column;
-    }
-  }
+}

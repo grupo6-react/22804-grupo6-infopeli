@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { get } from '../utils/Cliente';
 import { MovieCard } from './MovieCard';
 import styles from './MoviesFlex.module.css';
 import { SwiperSlide } from 'swiper/react';
@@ -7,17 +6,15 @@ import { Autoplay, Pagination } from 'swiper';
 import { Swiper } from 'swiper/react';
 import 'swiper/css';
 // trayendo la lista de peliculas
-export function MoviesFlex() {
+export function MoviesFlex({ title, movieList }) {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    get('/discover/movie').then((data) => {
-      setMovies(data.results);
-    });
-  }, []);
+    setMovies(movieList);
+  }, [movieList]);
   return (
     <div className={styles.moviesFlex}>
-      <h3>Las mas recomendadas </h3>
+      <h3> {title} </h3>
       <div className="container">
         <div className="swiperContainer">
           <Swiper

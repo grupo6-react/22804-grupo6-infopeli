@@ -14,7 +14,7 @@ export function MovieCard({ movie, notTitle }) {
           src={imageUrl}
           alt={movie.title}
         />
-        <div className={styles.title}>{movie.title}</div>
+        {!notTitle && <div className={styles.title}>{movie.title}</div>}
       </Link>
     </li>
   );
