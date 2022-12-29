@@ -9,6 +9,9 @@ import {AcercaDe} from '../components/acercade/acercade'
 import {Privacidad} from '../components/privacidad/privacidad'
 import { Faq } from '../components/faq/faq';
 import { Terminos } from '../components/terminos/terminos';
+import RestablecerContraseña from '../components/Login/RestablecerContraseña';
+
+
 
 const Router = () => {
   return (
@@ -19,6 +22,7 @@ const Router = () => {
             <Route index element={<Home />}></Route>
             <Route path="/movies/:movie_id" element={<Movie />}></Route>
             <Route path='/irAlogin' element={<LoginPage />}></Route>
+            <Route path='/restablecerContraseña' element={<RestablecerContraseña/>}></Route> 
             <Route path='/contacto' element={<Contacto />}></Route>
             <Route path='/acercade' element={<AcercaDe />}></Route>
             <Route path='/privacidad' element={<Privacidad />}></Route>
