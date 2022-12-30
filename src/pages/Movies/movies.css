@@ -1,0 +1,61 @@
+.moviesContainer {
+  min-height: 900px;
+  height: 100%;
+  width: 100%;
+  margin: 100px 0 0 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.formsContainer {
+  display: flex;
+}
+
+.searchBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 15px 25px 15px;
+  height: 44px;
+  width: 300px;
+  border-radius: 5px;
+  background-color: #494949;
+}
+
+.searchBarInput {
+  all: unset;
+  font: 16px system-ui;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  padding: 6px 10px;
+}
+
+.searchBarBtn {
+  all: unset;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+}
+
+svg {
+  color: #fff;
+  fill: currentColor;
+  width: 24px;
+  height: 24px;
+}
+
+input:valid {
+  border: none;
+}
+
+.movieCardContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.MovieCard {
+  margin: 10px 5px;
+}

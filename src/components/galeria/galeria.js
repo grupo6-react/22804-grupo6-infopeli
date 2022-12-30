@@ -1,22 +1,24 @@
 import React, { Component } from "react";
 
-//Importar libreria Slick.js 
+//Importando libreria Slick.js 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
-import logo from './img1.jpg';
+//Importando movie.css
 import '../../pages/Movie/movie.css';
+
 
 //Funciones para personalizar las flechas del carrousel
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
-    <div
-      className={className}
-      style={{ ...style, display: "none", background: "red" }}
-      onClick={onClick}
-    />
+      <div
+        className={className}
+        style={{ ...style, display: "block" }}
+        onClick={onClick}
+      />
+    
   );
 }
 
@@ -25,7 +27,7 @@ function SamplePrevArrow(props) {
   return (
     <div
       className={className}
-      style={{ ...style, display: "none", background: "green" }}
+      style={{ ...style, display: "block" }}
       onClick={onClick}
     />
   );
@@ -34,28 +36,12 @@ function SamplePrevArrow(props) {
 //Exportar el componente "Galeria"
 export default class Galeria extends Component { 
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      nav1: null,
-      nav2: null
-    };
-  }
-
-  componentDidMount() {
-    this.setState({
-      nav1: this.slider1,
-      nav2: this.slider2
-    });
-  }
-
   render() {
     //Configuracion de las propiedades del carrousel
     const settings = {
       nextArrow: <SampleNextArrow />,
       prevArrow: <SamplePrevArrow />,
       centerMode: true,
-      height: 40,
       responsive: [
         {
           breakpoint: 1024,
@@ -72,62 +58,14 @@ export default class Galeria extends Component {
     //Estructura HTML del carrusel
     <div className="container">
         <h2>Trailers</h2>
-        {/*Slider principal, donde se hace foco lo que se esta mostrando */}
-        <Slider
-          asNavFor={this.state.nav2}
-          ref={slider => (this.slider1 = slider)}
-          {...settings}
-        >
-
+        {/*Slider donde se muestra los trailers */}
+        <Slider {...settings} >
           {/*Divs con los contenidos a monstrar*/}
           <div>
-            <img src={logo} alt="logo" />
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/BPjbiZQmBI4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
           <div>
-            <img src={logo} alt="logo1" />
-          </div>
-          <div>
-            <img src={logo} alt="logo1" />
-          </div>
-          <div>
-            <img src={logo} alt="logo1" />
-          </div>
-          <div>
-            <img src={logo} alt="logo1" />
-          </div>
-          <div>
-            <img src={logo} alt="logo1" />
-          </div>
-        </Slider>
-
-        <h4>Más trailers</h4>
-        {/*Slider secundario, donde se encuentran los contenidos secundarios */}
-        <Slider
-          asNavFor={this.state.nav1}
-          ref={slider => (this.slider2 = slider)}
-          slidesToShow={3}
-          swipeToSlide={true}
-          focusOnSelect={true}
-          >
-          
-          {/*Divs con los contenidos a monstrar*/}
-          <div>
-            <img src={logo} alt="logo1"/>
-          </div>
-          <div>
-            <img src={logo} alt="logo1"/>
-          </div>
-          <div>
-            <img src={logo} alt="logo1"/>
-          </div>
-          <div>
-            <img src={logo} alt="logo1"/>
-          </div>
-          <div>
-            <img src={logo} alt="logo1"/>
-          </div>
-          <div>
-            <img src={logo} alt="logo1"/>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/BPjbiZQmBI4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </Slider>
     </div>

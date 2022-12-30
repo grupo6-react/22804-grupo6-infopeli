@@ -1,0 +1,68 @@
+/*import fuente utilizada en el proyecto*/
+@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;500;700&display=swap');
+/*ESTILOS LOGIN Y RESTABLECER CONTRASEÑA*/
+/*DIV PRINCIPAL*/
+.principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 90px;
+    min-height: 500px;
+}
+
+/*DIV CONTENEDORES*/
+.divRegistro, .divLogin{
+    text-align: center;
+    width: 25%;
+}
+
+
+/*BOTONES*/
+.botones{
+    max-width: 125px;
+    margin: 10px 0;
+}
+/* h3 y h4*/
+.titulo{
+    text-align: center;
+    padding: 1rem;
+}
+
+/*Datos del login en HOME*/
+/*div contenedor*/
+.login-container{
+    display: flex;
+    justify-content: flex-end;
+}
+.datosLogin {
+    max-width: 544px;
+    margin: 0 auto;
+    max-height: 109px;
+    max-width: 280px;
+    border: 1px solid;
+    margin: 0.5rem;
+    padding: 15px;
+    text-align: center; 
+    right: 12px;
+}
+/*boton CERRAR SESION*/
+.btn-cierre-sesion{
+    max-width: 125px;
+    margin: 0 !important;
+}
+
+ 
+@media only screen and (max-width: 480px)  {
+    .divRegistro, .divLogin{
+        width: 70% !important;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width:780px) {
+    .divRegistro, .divLogin{
+        width: 50% !important;
+    }
+}
+
+@media only screen and (min-width: 1201px) {
+}
