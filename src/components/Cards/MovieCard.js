@@ -3,7 +3,7 @@ import styles from "./MovieCard.module.css";
 //import for Favs
 import { saveFav } from "../../firebaseConfig";
 import { useLoginContext } from "../../UserProvider";
-import Fav from "../Fav";
+// import Fav from "../Fav";
 import React, { useContext } from "react";
 import { Favcontext } from "../../contexts/favContext";
 import { useState } from "react";
@@ -15,23 +15,23 @@ export function MovieCard({ movie, notTitle }) {
   //Constantes y funciones para Favs
   const { saveLogin } = useLoginContext();
   const contexData = useContext(Favcontext);
-  let favExist;
   const [stateFav, setStateFav] = useState(false);
   const [classNameState, setClassNameState] = useState(false);
-
+  
   function changeFavStatus() {
     setClassNameState(!classNameState);
   }
-
+  
   function addFav() {
     //Cambio de estado que funciona ok
     setStateFav(!stateFav);
   }
-
+  
   const handleClick = () => {
     if (!saveLogin) {
       Swal.fire("Debes hacer login para guardar el favorito");
     } else {
+      let favExist;
       addFav();
       changeFavStatus();
       saveFav(saveLogin, movie.id); //Guarda el email y la movieId en la BD

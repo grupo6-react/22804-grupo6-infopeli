@@ -48,7 +48,7 @@ const Featured = () => {
         {' '}
         <div>
           <div className="featured">
-            <img
+            <img src='movie'
               style={{
                 background: `url(https://image.tmdb.org/t/p/original/${item.backdrop_path}) no-repeat center center fixed`,
               }}

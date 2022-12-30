@@ -34,7 +34,7 @@ const Login = () =>{
     const registro = async () =>{
       //almacenamiento de email y contraseña utilizando libreria auth de firebase metodo 'createUserWhithEmailAndPassword'
         try{
-            const user = await createUserWithEmailAndPassword(auth,registerEmail, registerPassword);
+            // const user = await createUserWithEmailAndPassword(auth,registerEmail, registerPassword);
         //aviso de registro con exito utilizando libreria sweetalert2
             Swal.fire('Usuario Registrado con exito'); 
         }
@@ -47,7 +47,7 @@ const Login = () =>{
         if (error.message === 'Firebase: Error (auth/email-already-in-use).') {
           Swal.fire('el nombre de usuario ya esta en uso')
         } 
-        if (registerPassword.length < 7 && registerPassword !='' ) {
+        if (registerPassword.length < 7 && registerPassword !=='' ) {
           Swal.fire('debe ingresar una contraseña de almenos 7 caracteres')
         }
        
@@ -58,7 +58,7 @@ const Login = () =>{
     const inicioSesion = async() =>{
       //inicio de sesion utilizando libreria auth de firebase metodo 'signInEmailAndPassword'
         try{
-            const user = await signInWithEmailAndPassword(auth,loginEmail, loginPassword);
+            // const user = await signInWithEmailAndPassword(auth,loginEmail, loginPassword);
             
            await setSaveLoginEmail(loginEmail);
             navigate('/');

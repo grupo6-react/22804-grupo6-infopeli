@@ -18,17 +18,11 @@ const Preguntas = props => {
 
     const preguntasrender = Object.keys(preguntasFrecuentes).map((element,index) => {
         if (props.preg === "primero" && index < 4){
-            return (
-                <><li key={index} className='list-faq'>{element}</li><p className='text-question' dangerouslySetInnerHTML={{__html: preguntasFrecuentes[element]}}/></>
-            )
+            return <><li key={index} className='list-faq'>{element}</li><p className='text-question' dangerouslySetInnerHTML={{__html: preguntasFrecuentes[element]}}/></>
         }else if (props.preg === "segundo" && index > 3 && index < 7){
-            return (
-                <><li key={index} className='list-faq'>{element}</li><p className='text-question'>{preguntasFrecuentes[element]}</p></>
-            )
+            return <><li key={index} className='list-faq'>{element}</li><p className='text-question'>{preguntasFrecuentes[element]}</p></>
         }else if (props.preg === "tercero" && index > 6){
-            return (
-                <><li key={index} className='list-faq'>{element}</li><p className='text-question'>{preguntasFrecuentes[element]}</p></>
-            )
+            return <><li key={index} className='list-faq'>{element}</li><p className='text-question'>{preguntasFrecuentes[element]}</p></>
         }
     })
 
