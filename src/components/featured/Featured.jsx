@@ -1,36 +1,26 @@
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import MovieIcon from '@mui/icons-material/Movie';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './featured.scss';
-import Youtube from 'react-youtube';
+/* import Youtube from 'react-youtube'; */
 import { Carousel, CarouselItem, CarouselIndicators } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useTmdbApiContext } from '../../contexts/TmdbApiContext';
 
 const Featured = () => {
-  const items = [
-    {
-      src: `https://as01.epimg.net/meristation/imagenes/2022/10/23/reportajes/1666545428_850666_1666559251_noticia_normal.jpg`,
-      logo: '',
-      title: `Titulo Pelicula 1`,
-      caption: `Descripcion Pelicula 1`,
-    },
-    {
-      src: `https://elcomercio.pe/resizer/g66OjtPDGnSyQA5Q4og_vh-7QeE=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/4D72MVHFM5HT3KXEOKZED6DOX4.webp`,
-      logo: '',
-      title: `Titulo Pelicula 2`,
-      caption: `Descripcion Pelicula 2`,
-    },
-    {
-      src: `https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/0B29A77ACD58DC7E0C23A24D5A6040EA7922B53499F2DD1915830DE99115827A/scale?width=1200&aspectRatio=1.78&format=jpeg`,
-      logo: '',
-      title: `Titulo Pelicula 3`,
-      caption: `Descripcion Pelicula 3`,
-    },
-  ];
+  const { moviesTrending } = useTmdbApiContext();
+  const [items, setItems] = useState([]);
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
-  const [show, setShow] = useState(false);
+  /*   const [show, setShow] = useState(false); */
+
+  useEffect(() => {
+    const fetchMovies = async () => {
+      setItems(await moviesTrending);
+    };
+    fetchMovies();
+  }, [moviesTrending]);
 
   const next = () => {
     if (animating) return;
@@ -53,29 +43,35 @@ const Featured = () => {
       <CarouselItem
         onExiting={() => setAnimating(true)}
         onExited={() => setAnimating(false)}
-        key={item.src}
+        key={item.id}
       >
         {' '}
         <div>
           <div className="featured">
-            <img src={item.src} />
-            <div
+            <img
+              style={{
+                background: `url(https://image.tmdb.org/t/p/original/${item.backdrop_path}) no-repeat center center fixed`,
+              }}
+            />
+            {/*  <div
               className="youtube"
               style={{ display: show ? 'block' : 'none' }}
             >
               <Youtube videoId={''} />
-            </div>
+            </div> */}
             <div className="info">
               <h1 className="title">{item.title}</h1>
-              <span className="desc">{item.caption}</span>
+              <span className="desc">{item.overview}</span>
               <div className="buttons">
                 <button className="play">
-                  <Link to={''}>
+                  <Link to={`movies/${item.id}`}>
                     <PlayArrowIcon />
                     <span>Play</span>
                   </Link>
                 </button>
-                <button className="more" onClick={() => setShow((s) => !s)}>
+                <button
+                  className="more" /* onClick={() => setShow((s) => !s)} */
+                >
                   <MovieIcon />
 
                   <span>Trailer</span>

@@ -1,81 +1,81 @@
 .featured {
-    height: 100vh;
-    position: relative;
-  .youtube{
+  height: 100vh;
+  position: relative;
+  .youtube {
     position: absolute;
     width: 50%;
-   display: none;
+    display: none;
     left: 387px;
     bottom: 191px;
-      
-    
   }
-    .info {
-      width: 35%;
-      position: absolute;
-      left: 50px;
-      bottom: 100px;
-      color: white;
+  .info {
+    width: 35%;
+    position: absolute;
+    left: 50px;
+    bottom: 100px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+
+    img {
+      width: 300px;
+    }
+
+    .desc {
+      margin: 20px 0px;
+    }
+
+    .buttons {
       display: flex;
-      flex-direction: column;
-  
-      img {
-        width: 300px;
-      }
-  
-      .desc {
-        margin: 20px 0px;
-      }
-  
-      .buttons {
+
+      button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
         display: flex;
-  
-        button {
-          padding: 10px 20px;
-          border: none;
-          border-radius: 5px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 18px;
-          font-weight: 500;
-          margin-right: 10px;
-          cursor: pointer;
-          
-          &.play {
-            /* cambio de color botones */
-            background-color: #ffe066 !important;
-            a{
-              text-decoration: none;
-              color: #000 !important;
-           
-            }
-             }
-  
-          &.more {
-            /* cambio de color botones */
-            background-color: #ffe066;;
-            color: #000;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        font-weight: 500;
+        margin-right: 10px;
+        cursor: pointer;
+
+        &.play {
+          /* cambio de color botones */
+          background-color: #ffe066 !important;
+          a {
+            text-decoration: none;
+            color: #000 !important;
           }
-  
-          span {
-            margin-left: 5px;
-          }
+        }
+
+        &.more {
+          /* cambio de color botones */
+          background-color: #ffe066;
+          color: #000;
+        }
+
+        span {
+          margin-left: 5px;
         }
       }
     }
   }
+}
 
+.featured img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel-indicators {
+  display: none !important;
+}
+
+@supports (object-fit: cover) {
   .featured img {
-    width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: unset;
+    object-position: center center;
   }
-  
- 
-  @supports(object-fit: cover){
-    .featured img{
-      height: 100%;
-      object-fit: unset;
-      object-position: center center;
-    }
 }
