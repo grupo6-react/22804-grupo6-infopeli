@@ -53,6 +53,10 @@
           /* cambio de color botones */
           background-color: #ffe066;
           color: #000;
+          a {
+            text-decoration: none;
+            color: #000 !important;
+          }
         }
 
         span {
