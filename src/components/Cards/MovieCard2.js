@@ -18,10 +18,7 @@ export function MovieCard({ movie, notTitle }) {
   let favExist;
   const [stateFav, setStateFav] = useState(false);
   const [classNameState, setClassNameState] = useState (false)
-
-  function changeFavStatus (){
-    setClassNameState(!classNameState);
-  }
+  
 
   function addFav  ()  {
       //Cambio de estado que funciona ok
@@ -34,7 +31,6 @@ export function MovieCard({ movie, notTitle }) {
       Swal.fire("Debes hacer login para guardar el favorito");
     } else {
      addFav()
-     changeFavStatus()
       saveFav(saveLogin, movie.id); //Guarda el email y la movieId en la BD
       let data = JSON.stringify(contexData); // Extraigo la info de los favoritos por el contexData
       let id = movie.id; // adquiero el id de la movie renderizada
@@ -44,12 +40,11 @@ export function MovieCard({ movie, notTitle }) {
       favExist = data.includes(id); // con esto se valida que el json incluya el id de la peli clickeada
       // addFav();
       if(favExist){
-        
+
         console.log('Existe el id en el array de los favoritos.'+ favExist )
       } else {
         console.log('No existe!' + favExist)
       }
-      
     }
   };
 
@@ -64,10 +59,34 @@ export function MovieCard({ movie, notTitle }) {
               {console.log(movie.id)}
               {console.log(contexData)}
               {/* Intento Mapear */}
+            {contexData.map((peli) =>{
+              if(movie.id === peli.movieId){
+                return (
+                  // console.log('el mismo movie.id es: '+ movie.id + ' y el movie.movieId es: ' + peli.movieId)
+                   <div className="heartLike">
+                    es favorito
+                  </div>
+                 
+                  );
+               } //else {
+              //   (
+              //     peli.movieId
+              //   )
+              // }
               
+            } )}
+                {/* ESTA CONSULTA DEBERIA REALIZAR ANTES DE RENDERIZAR PARA INCLUIR LOS FAVS */}
+              {/* {favExist? <div className="heartLike"></div> : <div className="heart"></div>} */}
+
+              {/* Seteo el estado de los favoritos para pintarlos de rojo en caso true */}
+              {stateFav == true ? (
+                  <div className="heartLike">
+                  
+                  </div>
+              ) : (
+                <div className="heart"></div>
+              )} 
               
-                
-              <div className={classNameState? 'heartLike' :'heart'}></div>
             </button>
           </div>
         {/* Termina Favs */}

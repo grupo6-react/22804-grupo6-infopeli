@@ -14,6 +14,7 @@ import Swal from 'sweetalert2';
 
 
 
+
 const Login = () =>{
     //declaración de hooks
     const [registerEmail, setRegisterEmail] = useState('');
@@ -59,7 +60,7 @@ const Login = () =>{
         try{
             const user = await signInWithEmailAndPassword(auth,loginEmail, loginPassword);
             
-           await setSaveLoginEmail(loginEmail)
+           await setSaveLoginEmail(loginEmail);
             navigate('/');
         }
       catch(error) {

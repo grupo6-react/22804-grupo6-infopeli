@@ -64,10 +64,14 @@ export function MovieCard({ movie, notTitle }) {
               {console.log(movie.id)}
               {console.log(contexData)}
               {/* Intento Mapear */}
+            {contexData.map((peli) =>{
+              if(movie.id === peli.movieId){
+            
+              }
               
-              
+            } )}
                 
-              <div className={classNameState? 'heartLike' :'heart'}></div>
+              <div className={classNameState? 'heartLike':'heart'}></div>
             </button>
           </div>
         {/* Termina Favs */}
