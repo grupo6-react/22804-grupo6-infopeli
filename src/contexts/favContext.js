@@ -3,15 +3,10 @@ import { getDocs, query, where } from "firebase/firestore";
 import { favRef } from "../firebaseConfig";
 import { useLoginContext } from "../UserProvider";
 
-//prueba
-export const ejemplo = () =>{
-  console.log('Llego desde favContex con la const ejemplo')
-}
 //Tomo email para armar la query de la BD
 let emailLogged = "";
 function CatchEmail() {
   const { saveLogin } = useLoginContext();
-  const emailData = useContext(useLoginContext);
   emailLogged = { saveLogin };
   return emailLogged;
 }
@@ -27,7 +22,6 @@ export const getFavByEmail = async () => {
     snapshot.docs.forEach((doc) => {
       favByEmail.push({ ...doc.data() });
     });
-    console.log(emailWithFav.saveLogin);
   });
 };
 // Terminan Favoritos desde la BD
@@ -36,7 +30,6 @@ export const getFavByEmail = async () => {
 export const Favcontext = createContext();
 export function FavcontextProvider(props) {
   getFavByEmail();
-  ejemplo();
   const contextFavData = favByEmail;
   const valor = contextFavData;
   return (
