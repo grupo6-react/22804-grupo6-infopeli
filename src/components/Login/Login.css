@@ -1,21 +1,26 @@
 /*import fuente utilizada en el proyecto*/
 @import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;500;700&display=swap');
+/*ESTILOS LOGIN Y RESTABLECER CONTRASEÑA*/
+/*DIV PRINCIPAL*/
+.principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 90px;
+    min-height: 500px;
+}
 
 /*DIV CONTENEDORES*/
 .divRegistro, .divLogin{
     text-align: center;
+    width: 25%;
 }
-/*div contenedor inputs*/
-.registro, .login {
-    display: flex;
-    flex-direction: column;
-}
-.login input {
-    width: 25% !important;
-}
+
+
 /*BOTONES*/
 .botones{
-    max-width: 125px; 
+    max-width: 125px;
+    margin: 10px 0;
 }
 /* h3 y h4*/
 .titulo{
@@ -48,13 +53,13 @@
 
  
 @media only screen and (max-width: 480px)  {
-    .login input{
+    .divRegistro, .divLogin{
         width: 70% !important;
     }
 }
 
-@media only screen and (min-width: 480px) and (max-width:780px) {
-    .login input{
+@media only screen and (min-width: 481px) and (max-width:780px) {
+    .divRegistro, .divLogin{
         width: 50% !important;
     }
 }

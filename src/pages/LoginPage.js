@@ -1,8 +1,9 @@
 import React from 'react';
-import Login from '../components/Login';
+import Login from '../components/Login/Login';
+
 
 const LoginPage = () => {
-  return <div>Login
+  return <div>
     <Login/>
   </div>;
 };

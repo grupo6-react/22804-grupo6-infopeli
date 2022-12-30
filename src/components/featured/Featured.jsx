@@ -72,9 +72,11 @@ const Featured = () => {
                 <button
                   className="more" /* onClick={() => setShow((s) => !s)} */
                 >
-                  <MovieIcon />
+                  <Link to={`movies/${item.id}`}>
+                    <MovieIcon />
 
-                  <span>Trailer</span>
+                    <span>Trailer</span>
+                  </Link>
                 </button>
               </div>
             </div>

@@ -1,6 +1,12 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import {getFirestore} from "firebase/firestore";
+import {getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+  doc,
+  deleteDoc
+} from "firebase/firestore";
 import {getAuth} from "firebase/auth"
 //import { getAnalytics } from "firebase/analytics";
 
@@ -28,4 +34,38 @@ export const db = getFirestore(app);
 
 export const auth = getAuth(app)
 
+// Dejo referencia a la coleccion
+export const favRef = collection(db, 'favoritos')
+
+// Agregar Favs a la coleccion
+export const saveFav = (email, movieId) => {
+ 
+  addDoc(favRef, { email, movieId });
+  
+
+};
+
+//Obtener todos los favoritos
+export const getFav =  () => {
+   getDocs(favRef)
+   .then((snapshot)=>{
+    let favoritos = [];
+    snapshot.docs.forEach((doc)=>{
+      favoritos.push({ ...doc.data(), id:doc.id})
+    })
+    
+   })
+   .catch(err =>{
+    console.log(err.message)
+   })
+  console.log("llego desde firebaseconfig");
+  
+};
+// Borrar favorito
+export function deleteFav(uid){
+  
+  const delRef = doc(db, 'favoritos', uid)
+  deleteDoc(delRef)
+  
+}
   

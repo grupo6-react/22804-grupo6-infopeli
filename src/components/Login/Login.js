@@ -1,15 +1,17 @@
 
-import React, {useState, useContext} from 'react';
-import {createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut} from 'firebase/auth'
+import React, {useState} from 'react';
+import {createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth'
 
-import '../Login.css';
+import './Login.css';
 
-import{auth} from '../firebaseConfig';
+import{auth} from '../../firebaseConfig';
 
 import {useNavigate} from 'react-router';
 
-import {useLoginContext} from '../UserProvider';
+import {useLoginContext} from '../../UserProvider';
 import Swal from 'sweetalert2';
+
+
 
 
 
@@ -40,13 +42,13 @@ const Login = () =>{
       catch(error) {
         //validaciones
         if ((registerEmail === '' || registerPassword=== '')) {
-          alert('los campos deben se rellenados')
+          Swal.fire('los campos deben se rellenados')
         }
         if (error.message === 'Firebase: Error (auth/email-already-in-use).') {
-          alert('el nombre de usuario ya esta en uso')
+          Swal.fire('el nombre de usuario ya esta en uso')
         } 
         if (registerPassword.length < 7 && registerPassword !='' ) {
-          alert('debe ingresar una contraseña de almenos 7 caracteres')
+          Swal.fire('debe ingresar una contraseña de almenos 7 caracteres')
         }
        
         console.log(error.message)
@@ -58,7 +60,7 @@ const Login = () =>{
         try{
             const user = await signInWithEmailAndPassword(auth,loginEmail, loginPassword);
             
-           await setSaveLoginEmail(loginEmail)
+           await setSaveLoginEmail(loginEmail);
             navigate('/');
         }
       catch(error) {
@@ -67,26 +69,26 @@ const Login = () =>{
     } 
     
     return (
-        <div className='login'>
+        <div className='principal '>
           {/*registro de usuario*/ }
             <div className='divRegistro'>
-                <h3 className='titulo'>Registro de usuario </h3>
-                <div className='registro'>
+                <h4 className='titulo'>Registro de usuario </h4>
+                <div className='formulario'>
                 <input id="register" className="form-control  m-auto mb-3"   placeholder='ingrese su email'  onChange={(event)=> {setRegisterEmail(event.target.value)}}/>
-                <input id="password" className="form-control m-auto mb-2" placeholder='ingrese su coontraseña'  onChange={(event)=> {setRegisterPassword(event.target.value)}}/>
+                <input type='password' id="password" className="form-control m-auto mb-2" placeholder='ingrese su coontraseña'  onChange={(event)=> {setRegisterPassword(event.target.value)}}/>
                 <button className="botones btn btn-warning mx-auto" onClick={registro}>Crear usuario</button>
                 </div>
             </div>
-
+            {/*incicio de sesion*/}
             <div className='divLogin'>
-              {/*incicio de sesion*/}
-                <h3 className='titulo'>Inicio  de sesion</h3>
-                <div className='login'>
+                <h4 className='titulo'>Inicio  de sesion</h4>
+                <div className='formulario'>
                 <input className="form-control  m-auto mb-3"  placeholder='ingrese su email'  onChange={(event)=> {setLoginEmail(event.target.value)}}/>
-                <input className="form-control  m-auto mb-2" placeholder='ingrese su coontraseña'  onChange={(event)=> {setLoginPassword(event.target.value)}}/>
+                <input type='password' className="form-control  m-auto mb-2" placeholder='ingrese su coontraseña'  onChange={(event)=> {setLoginPassword(event.target.value)}}/>
                 <button className="botones btn btn-warning mx-auto" onClick={inicioSesion}>iniciar sesion</button>
                 </div>
             </div>
+            <a href='/restablecerContraseña'> restablecer contraseña</a>
             {/*usuario logueado*/}
             <h4 className='titulo'> {saveLogin}</h4>           
         </div>
