@@ -1,0 +1,42 @@
+.footer-contenedor{
+  padding: 40px 80px;
+  justify-content: center;
+  text-align: center;
+  background-image: url(../../assets/bannerSL.png);
+  background-size: contain;
+  background-repeat:repeat-x;
+  width: 100vw;
+  position: relative;
+  bottom: 0;
+}
+.logo-emovies{
+  width: auto;
+  height: 50px;
+
+}
+.footer-menu-contenedor{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 20px;
+
+}
+.footer-col{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  padding-right: 50px;
+}
+
+.link-footer{
+  font-size: 13px;
+  text-decoration: none;
+  color: #fff;
+  margin-bottom: 10px;
+  list-style: none;
+  cursor: pointer;
+}
+
+.link-footer:hover{
+  color: #ffe066;
+}

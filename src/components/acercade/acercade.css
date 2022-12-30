@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,700;0,800;1,900&display=swap');
+
+.container-acercade{
+    background-color: rgb(255, 255, 255);
+    color: rgb(18, 18, 18);
+    padding: 100px 0 50px 0;
+    margin: 0;
+    font-family: 'Work Sans', sans-serif;
+}
+.subcontainer-acercade{
+    margin: auto;
+    width: 70%;
+}
+
+.h2-acercade{
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: 'Work Sans', sans-serif;
+}
+.subcontainer-acercade p{
+    font-weight: 300;
+    margin-bottom: 0;
+}
+.estudiantes-acercade{
+    color: rgb(48, 48, 52);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 5px 0;
+}
+.w{
+    font-size: 1.4rem;
+}
+h3{
+    font-size: 2rem;
+    font-weight: 500;
+}

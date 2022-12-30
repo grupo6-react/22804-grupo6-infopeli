@@ -1,0 +1,17 @@
+
+.contenedor-notFount{
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 150px auto;
+  height: 100vh;
+}
+.p-notFound{
+  font-size: 100px;
+  margin-top: 50px;
+  font-weight: 300;
+}
+.notFoundImage{
+  width: auto;
+  height: 50%;
+}

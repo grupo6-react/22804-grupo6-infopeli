@@ -1,0 +1,87 @@
+.favButtons {
+    
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    border: none;
+    
+}
+.button{
+    display:contents;
+}
+.heart{
+    
+    position: absolute;
+    top: 8px;
+    right: 35px;
+
+    background: rgb(251, 251, 251);
+    height: 20px;
+    width: 20px;
+    transform: rotate(-45deg);
+    
+}
+.heart::before,
+.heart::after{
+    
+    content:"";
+    background: rgb(253, 253, 253);
+    border-radius: 50%;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    
+}
+.heart::before{
+    
+top:-10px;
+left: 0;
+
+}
+.heart:after{
+    
+    left: 10px;
+    top:0;
+}
+
+/* Si es un like activo */
+.favButtons {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    border: none;
+    
+} 
+ .heartLike{
+    position: absolute;
+    top: 8px;
+    right: 35px;
+
+    background: rgb(244, 4, 4);
+    height: 20px;
+    width: 20px;
+    transform: rotate(-45deg);
+    
+}
+.heartLike::before,
+.heartLike::after{
+    content:"";
+    background: rgb(244, 4, 4);
+    border-radius: 50%;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    
+}
+.heartLike::before{
+top:-10px;
+left: 0;
+
+}
+.heartLike:after{
+    left: 10px;
+    top:0;
+}
+/* @keyframes pulse{
+75%
+} */
