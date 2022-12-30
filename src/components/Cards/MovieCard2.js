@@ -39,13 +39,14 @@ export function MovieCard({ movie, notTitle }) {
       // ademas hay que cambiar el estado de addfav a true.
       favExist = data.includes(id); // con esto se valida que el json incluya el id de la peli clickeada
       // addFav();
-      if(favExist){
+      favExist? <div className="heartLike"></div> : <div className="heart"></div>}
+    //   if(favExist){
 
-        console.log('Existe el id en el array de los favoritos.'+ favExist )
-      } else {
-        console.log('No existe!' + favExist)
-      }
-    }
+    //     console.log('Existe el id en el array de los favoritos.'+ favExist )
+    //   } else {
+    //     console.log('No existe!' + favExist)
+    //   }
+    // }
   };
 
 
@@ -56,17 +57,16 @@ export function MovieCard({ movie, notTitle }) {
         
         <div className="favButtons">
             <button className ='button'onClick={handleClick}>
-              {console.log(movie.id)}
-              {console.log(contexData)}
+              {/* {console.log(movie.id)}
+              {console.log(contexData)} */}
               {/* Intento Mapear */}
             {contexData.map((peli) =>{
               if(movie.id === peli.movieId){
                 return (
-                  // console.log('el mismo movie.id es: '+ movie.id + ' y el movie.movieId es: ' + peli.movieId)
-                   <div className="heartLike">
-                    es favorito
+                  <div>
+                    {console.log('hola')}
                   </div>
-                 
+                  
                   );
                } //else {
               //   (
@@ -76,7 +76,7 @@ export function MovieCard({ movie, notTitle }) {
               
             } )}
                 {/* ESTA CONSULTA DEBERIA REALIZAR ANTES DE RENDERIZAR PARA INCLUIR LOS FAVS */}
-              {/* {favExist? <div className="heartLike"></div> : <div className="heart"></div>} */}
+              
 
               {/* Seteo el estado de los favoritos para pintarlos de rojo en caso true */}
               {stateFav == true ? (

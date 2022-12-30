@@ -19,7 +19,7 @@ export function MoviesFlex({ title, movieList }) {
         <div className="swiperContainer">
           <Swiper
             modules={[Pagination, Autoplay]}
-            loop={true}
+            loop={false}
             autoplay={{
               delay: 3000,
               disableOnInteraction: false,
