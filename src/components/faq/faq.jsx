@@ -13,7 +13,7 @@ const Preguntas = props => {
         "¿Mis datos personales estan protegidos?":"Solo solicitamos datos basicos de registro como nombre de usuario y contraseña para poder registrarlos en la base de datos. Aun asi son datos protegidos debido a que usamos una base de datos protegido.",
         "¿Para que sirve marcar como favorito las peliculas?":"Una vez registrado y logeado el sistema identificara que sos un usuario de nuestro sitio web y te apareceran iconos de favorito para poder elegir cuales quieres que esten en tu catalogo de mejores peliculas. Una vez realizado esto puedes ir a la pestaña para visualizar todas tus favoritas.",
         "¿Puedo tener mas de una cuenta por persona?":"Una vez registrado el sistema identifica tu correo electronico. Al ser unico por persona, solo podes registrar uno por correo electronico.",
-        "¿Por qué no me aparecen los iconos de favorito?":"Primero para que aparezcan los iconos de favorito debes estar logeado. En cualquier otro caso el icono no sera mostrado.",
+       
     }
 
     const preguntasrender = Object.keys(preguntasFrecuentes).map((element,index) => {
