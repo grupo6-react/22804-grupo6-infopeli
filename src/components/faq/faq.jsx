@@ -25,7 +25,7 @@ const Preguntas = props => {
             return (
                 <><li key={index} className='list-faq'>{element}</li><p className='text-question'>{preguntasFrecuentes[element]}</p></>
             )
-        }else if (props.preg === "tercero" && index > 6){
+        }else{
             return (
                 <><li key={index} className='list-faq'>{element}</li><p className='text-question'>{preguntasFrecuentes[element]}</p></>
             )
