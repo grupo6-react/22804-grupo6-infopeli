@@ -14,8 +14,6 @@ export default function Fav (movie){
     return <div className ='favButtons'>
         
         <button onClick={handleClick}><div className='heart'></div></button>
-      
-        {/* <span aria-label='Fav Gif'>Fav </span> */}
     
         </div>
   

@@ -5,9 +5,7 @@ import {getFirestore,
   addDoc,
   getDocs,
   doc,
-  deleteDoc,
-  query,
-  where,
+  deleteDoc
 } from "firebase/firestore";
 import {getAuth} from "firebase/auth"
 //import { getAnalytics } from "firebase/analytics";
@@ -55,7 +53,6 @@ export const getFav =  () => {
     snapshot.docs.forEach((doc)=>{
       favoritos.push({ ...doc.data(), id:doc.id})
     })
-    //  console.log(favoritos)
     
    })
    .catch(err =>{
