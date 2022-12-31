@@ -3,7 +3,7 @@ import styles from "./MovieCard.module.css";
 //import for Favs
 import { saveFav } from "../../firebaseConfig";
 import { useLoginContext } from "../../UserProvider";
-import Fav from "../Fav";
+// import Fav from "../Fav";
 import React, { useContext } from "react";
 import { Favcontext } from "../../contexts/favContext";
 import { useState } from "react";
@@ -44,7 +44,7 @@ export function MovieCard({ movie, notTitle }) {
   return (
     <li className={styles.movieCard}>
       {/* Favs */}
-
+      {favExist}
       <div className="favButtons">
         <button className="button" onClick={handleClick}>
           <div className={classNameState ? "heartLike" : "heart"}></div>

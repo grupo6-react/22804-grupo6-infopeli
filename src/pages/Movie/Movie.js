@@ -12,7 +12,7 @@ const Movie = () => {
   useEffect(() => {
     getMovie();
     getMovieCredits();
-  }, []);
+  });
 
   const getMovie = async () => {
     try {

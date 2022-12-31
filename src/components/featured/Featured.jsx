@@ -52,6 +52,7 @@ const Featured = () => {
               style={{
                 background: `url(https://image.tmdb.org/t/p/original/${item.backdrop_path}) no-repeat center center fixed`,
               }}
+              alt=''
             />
             {/*  <div
               className="youtube"
